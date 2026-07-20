@@ -17,11 +17,6 @@ pip install -r requirements.txt
 
 ## Usage
 
-### Basic (public galleries)
-
-```bash
-python smdl.py 
-```
 
 Downloaded files are saved to `output/` by default, organized by album, mirroring the site's folder structure.
 
