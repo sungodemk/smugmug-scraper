@@ -58,13 +58,8 @@ username: your-smugmug-username
 session: your-smsess-cookie-value
 ```
 
-A template is provided at `input.md.example` — copy it to `input.md` and fill in your values:
+A template is provided at `input.md.example` — copy it to a new file named `input.md` and fill in your values:
 
-```bash
-cp input.md.example input.md
-```
-
-**`input.md` contains your live session cookie — never commit it or share it.** It's already excluded via `.gitignore`.
 
 Command-line flags always take precedence over `input.md` if both are provided.
 
