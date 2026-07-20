@@ -20,10 +20,8 @@ pip install -r requirements.txt
 ### Basic (public galleries)
 
 ```bash
-python smdl.py -u USERNAME
+python smdl.py 
 ```
-
-`USERNAME` is the SmugMug subdomain, i.e. the `USERNAME` in `https://USERNAME.smugmug.com`.
 
 Downloaded files are saved to `output/` by default, organized by album, mirroring the site's folder structure.
 
@@ -33,10 +31,20 @@ If the galleries you're downloading are password-protected, you need to pass you
 
 1. Log in to the SmugMug site in your web browser.
 2. Open your browser's developer tools and find the `SMSESS` cookie for the smugmug.com domain.
-3. Pass it with `-s`/`--session`:
+3. Fill in your values in input.md
+4. Run script
 
 ```bash
-python smdl.py -u USERNAME -s SMSESS_COOKIE_VALUE
+python smdl.py 
+```
+
+### Using an `input.md` config file instead of flags 
+
+Instead of passing `-u`/`-s` on the command line every time, you can create an `input.md` file next to `smdl.py` with your username and session cookie:
+fill in your values:
+```
+username: your-smugmug-username
+session: your-smsess-cookie-value
 ```
 
 ### Options
@@ -48,17 +56,6 @@ python smdl.py -u USERNAME -s SMSESS_COOKIE_VALUE
 | `-o`, `--output` | Output directory. Defaults to `output/`. |
 | `--albums` | Only download specific albums, given as titles separated by `$`. Wrap in single quotes to avoid shell substitution, e.g. `--albums 'Album 1$Album 2'`. Defaults to all albums. |
 | `--threads` | Number of concurrent image/video downloads. Defaults to `8`. |
-
-### Using an `input.md` config file instead of flags
-
-Instead of passing `-u`/`-s` on the command line every time, you can create an `input.md` file next to `smdl.py` with your username and session cookie:
-
-```
-username: your-smugmug-username
-session: your-smsess-cookie-value
-```
-
-A template is provided at `input.md.example` — copy it to a new file named `input.md` and fill in your values:
 
 
 Command-line flags always take precedence over `input.md` if both are provided.
